@@ -98,7 +98,7 @@ Time Series (Daily): {
 }
 ```
 
-## Visual of your component hierarchy
+## Component hierarchy
 ![P1 - Component Hierarchy](https://user-images.githubusercontent.com/92760530/156300538-e4181447-275d-435a-a408-0e5e6372194d.png)
 
 

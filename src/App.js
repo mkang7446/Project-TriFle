@@ -26,19 +26,17 @@ function App() {
   const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
 
   const [stocks, setStocks] = useState(null);
-  console.log(stocks);
 
   const [searchString, setSearchString] = useState("AAPL");
-  console.log(searchString);
 
   // HANDEL FUNCTIONS
   function handleChange(event) {
-    setSearchString(event.target.value);
+    setSearchString(event.target.value.toUpperCase());
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    setStocks(searchString);
+    getData(searchString);
   }
 
   const searchOption = {
@@ -47,13 +45,15 @@ function App() {
   };
 
   function getData(searchString) {
+    // searchString.map((element) => {
+    //   return element;
+    // });
     const url = `${searchOption.api}query?function=${timeSeries}&symbol=${searchString}&apikey=${searchOption.key}`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        const openPrice = data["Time Series (Daily)"];
-        setStocks(openPrice);
+        setStocks(data);
       })
       .catch(console.error);
   }
@@ -63,18 +63,18 @@ function App() {
   }, []);
 
   if (!stocks) {
-    return null;
+    return <p>Loading...</p>;
   }
 
   return (
     <SymbolContext.Provider
-      value={{ handleChange, handleSubmit, searchString }}
+      value={{ handleChange, handleSubmit, searchString, stocks }}
     >
       <div className="App">
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<SearchResult stocks={stocks} />} />
+            <Route path="/" element={<SearchResult />} />
             <Route path="/about" element={<About />} />
             <Route path="/news" element={<News />} />
           </Routes>

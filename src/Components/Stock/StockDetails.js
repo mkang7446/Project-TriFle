@@ -4,7 +4,7 @@ import { SymbolContext } from "../../Context/SymbolContext";
 function StockDetails(props) {
   const { stocks } = useContext(SymbolContext);
 
-  const symbol = stocks["Meta Data"]["2. Symbol"];
+  const symbol = stocks["Global Quote"]["01. symbol"];
 
   const [detail, setDetail] = useState(null);
 
@@ -15,6 +15,7 @@ function StockDetails(props) {
 
   function getData(symbol) {
     const url = `${searchOption.api}query?function=OVERVIEW&symbol=${symbol}&apikey=${searchOption.key}`;
+    // const url = `${searchOption.api}query?function=SYMBOL_SEARCH&keywords=${symbol}&apikey=${searchOption.key}`;
     console.log(url);
 
     fetch(url)
@@ -49,12 +50,12 @@ function StockDetails(props) {
     <div className="detail-container">
       <p>Company Name: {companyName}</p>
       <p>description: {description}</p>
-      <p>address: {address}</p>
-      <p>marketCap: {marketCap}</p>
-      <p>yearHigh: {yearHigh}</p>
-      <p>yearLow: {yearLow}</p>
+      <p>📍 {address}</p>
+      <p>marketCap: ${marketCap}</p>
+      <p>yearHigh: ${yearHigh}</p>
+      <p>yearLow: ${yearLow}</p>
       <p>divPerShare: {divPerShare}</p>
-      <p>divYield: {divYield}</p>
+      <p>divYield: {divYield}%</p>
       <p>divDate: {divDate}</p>
       <p>exchange: {exchange}</p>
       <p>country: {country}</p>

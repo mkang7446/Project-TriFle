@@ -8,12 +8,12 @@ import StockDetails from "./Components/Stock/StockDetails";
 
 import { SymbolContext } from "./Context/SymbolContext";
 
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   // USESTATE VARIABLES
 
-  const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
+  const initialStocks = ["AAPL", "MSFT", "GOOG"];
 
   const [stocks, setStocks] = useState(null);
 
@@ -37,7 +37,7 @@ function App() {
   };
 
   function getData(searchString) {
-    const url = `${searchOption.api}query?function=${timeSeries}&symbol=${searchString}&apikey=${searchOption.key}`;
+    const url = `${searchOption.api}query?function=GLOBAL_QUOTE&symbol=${searchString}&apikey=${searchOption.key}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -62,6 +62,7 @@ function App() {
       <div className="App">
         <Header />
         <main>
+          {/* { !searchString ?  } */}
           <Routes>
             <Route path="/" element={<SearchResult />} />
             <Route path="/about" element={<About />} />

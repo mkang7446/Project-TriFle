@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import SearchResult from "./Components/Stock.js/SearchResult";
+import About from "./Components/Header/About";
+import News from "./Components/Header/News";
+
+import { Route, Routes, Link } from "react-router-dom";
 
 const initialStocks = {};
 
@@ -43,7 +47,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchResult />
+      <main>
+        <Routes>
+          <Route path="/" element={<SearchResult />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+        </Routes>
+      </main>
     </div>
   );
 }

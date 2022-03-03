@@ -2,6 +2,7 @@ body {
   background-color: aqua;
 }
 
+/* HEADER */
 .header {
   background-color: rgb(64, 226, 43);
   display: flex;
@@ -14,4 +15,8 @@ body {
 
 .news-link {
   margin-left: 20px;
+}
+
+.search-bar {
+  margin-top: 30px;
 }

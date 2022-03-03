@@ -5,11 +5,14 @@ import SearchResult from "./Components/Stock.js/SearchResult";
 import About from "./Components/Header/About";
 import News from "./Components/Header/News";
 
+import { SymbolContext } from "./Context/SymbolContext";
+
 import { Route, Routes, Link } from "react-router-dom";
 
 const initialStocks = {};
 
 function App() {
+  // USESTATE VARIABLES
   const [mainStocks, setMainStocks] = useState([
     "AAPL",
     "MSFT",
@@ -21,8 +24,13 @@ function App() {
     "FB",
     "NFLX",
   ]);
+
   const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
+
   const [symbol, setSymbol] = useState("AAPL");
+
+  // HANDEL FUNCTIONS
+  function handleChange(event) {}
 
   const searchOption = {
     key: process.env.REACT_APP_ALPHAV_KEY,
@@ -45,16 +53,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<SearchResult />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/news" element={<News />} />
-        </Routes>
-      </main>
-    </div>
+    <SymbolContext.Provider value={symbol}>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<SearchResult />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/news" element={<News />} />
+          </Routes>
+        </main>
+      </div>
+    </SymbolContext.Provider>
   );
 }
 

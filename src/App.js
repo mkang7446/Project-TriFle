@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
+import SearchResult from "./Components/Stock.js/SearchResult";
+
+const initialStocks = {};
 
 function App() {
-  const [data, setData] = useState([]);
+  const [mainStocks, setMainStocks] = useState([
+    "AAPL",
+    "MSFT",
+    "GOOG",
+    "AMZN",
+    "TSLA",
+    "BRK-A",
+    "NVDA",
+    "FB",
+    "NFLX",
+  ]);
   const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
-  const [symbol, setSymbol] = useState("APPL");
+  const [symbol, setSymbol] = useState("AAPL");
 
   const searchOption = {
     key: process.env.REACT_APP_ALPHAV_KEY,
@@ -18,18 +31,19 @@ function App() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setMainStocks(data);
       })
       .catch(console.error);
   }
 
   useEffect(() => {
-    getData(data);
+    getData();
   }, []);
 
   return (
     <div className="App">
       <Header />
+      <SearchResult />
     </div>
   );
 }

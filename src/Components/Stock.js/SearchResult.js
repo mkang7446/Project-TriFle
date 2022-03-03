@@ -1,7 +1,7 @@
 import React from "react";
 
 function SearchResult(props) {
-  return <div>Hello from SearchResult!</div>;
+  return <div>hello from searchResult!</div>;
 }
 
 export default SearchResult;

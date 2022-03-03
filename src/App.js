@@ -17,7 +17,7 @@ function App() {
 
   const [stocks, setStocks] = useState(null);
 
-  // const initialState = getData("MSFT");
+  // console.log(getData("MSFT"));
 
   const [searchString, setSearchString] = useState(["AAPL"]);
 

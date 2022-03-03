@@ -27,10 +27,17 @@ function App() {
 
   const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
 
-  const [symbol, setSymbol] = useState("AAPL");
+  const [symbol, setSymbol] = useState("");
 
   // HANDEL FUNCTIONS
-  function handleChange(event) {}
+  function handleChange(event) {
+    setSymbol(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setSymbol(symbol);
+  }
 
   const searchOption = {
     key: process.env.REACT_APP_ALPHAV_KEY,
@@ -53,7 +60,11 @@ function App() {
   }, []);
 
   return (
-    <SymbolContext.Provider value={symbol}>
+    <SymbolContext.Provider
+      value={symbol}
+      handleChange={handleChange}
+      handleSubmit={handleSubmit}
+    >
       <div className="App">
         <Header />
         <main>

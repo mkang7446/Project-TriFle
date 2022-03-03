@@ -9,8 +9,6 @@ import { SymbolContext } from "./Context/SymbolContext";
 
 import { Route, Routes, Link } from "react-router-dom";
 
-const initialStocks = {};
-
 function App() {
   // USESTATE VARIABLES
   const [mainStocks, setMainStocks] = useState([
@@ -27,16 +25,20 @@ function App() {
 
   const [timeSeries, setTimeSeries] = useState("TIME_SERIES_DAILY");
 
-  const [symbol, setSymbol] = useState("");
+  const [stocks, setStocks] = useState(null);
+  console.log(stocks);
+
+  const [searchString, setSearchString] = useState("AAPL");
+  console.log(searchString);
 
   // HANDEL FUNCTIONS
   function handleChange(event) {
-    setSymbol(event.target.value);
+    setSearchString(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSymbol(symbol);
+    setStocks(searchString);
   }
 
   const searchOption = {
@@ -44,32 +46,35 @@ function App() {
     api: "https://www.alphavantage.co/",
   };
 
-  function getData() {
-    const url = `${searchOption.api}query?function=${timeSeries}&symbol=${symbol}&apikey=${searchOption.key}`;
+  function getData(searchString) {
+    const url = `${searchOption.api}query?function=${timeSeries}&symbol=${searchString}&apikey=${searchOption.key}`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setMainStocks(data);
+        const openPrice = data["Time Series (Daily)"];
+        setStocks(openPrice);
       })
       .catch(console.error);
   }
 
   useEffect(() => {
-    getData();
+    getData(searchString);
   }, []);
+
+  if (!stocks) {
+    return null;
+  }
 
   return (
     <SymbolContext.Provider
-      value={symbol}
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
+      value={{ handleChange, handleSubmit, searchString }}
     >
       <div className="App">
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<SearchResult />} />
+            <Route path="/" element={<SearchResult stocks={stocks} />} />
             <Route path="/about" element={<About />} />
             <Route path="/news" element={<News />} />
           </Routes>

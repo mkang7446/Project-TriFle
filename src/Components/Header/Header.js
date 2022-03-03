@@ -12,12 +12,14 @@ function Header(props) {
         </div>
       </Link>
       <SearchForm />
-      <Link to="/about">
-        <h2>About</h2>
-      </Link>
-      <Link to="/news">
-        <h2>News</h2>
-      </Link>
+      <div className="nav-right">
+        <Link to="/about">
+          <h2 className="about-link">About</h2>
+        </Link>
+        <Link to="/news">
+          <h2 className="news-link">News</h2>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -11,7 +11,10 @@ function Header(props) {
           <img className="logo" src={Logo} alt="LOGO" />
         </div>
       </Link>
-      <SearchForm />
+      <SearchForm
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
+      />
       <div className="nav-right">
         <Link id="nav-right" to="/about">
           <h2 className="about-link">About</h2>

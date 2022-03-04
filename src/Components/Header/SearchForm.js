@@ -2,17 +2,16 @@ import { useContext } from "react";
 import { SymbolContext } from "../../Context/SymbolContext";
 import { Link } from "react-router-dom";
 
-function SearchForm() {
-  const { handleChange, handleSubmit, searchString, ticker } =
-    useContext(SymbolContext);
-
+function SearchForm(props) {
+  const { searchString } = useContext(SymbolContext);
+  console.log(searchString);
   return (
     <div className="search-bar">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={props.handleSubmit}>
         <label htmlFor="searchBar"></label>
         <input
           value={searchString}
-          onChange={handleChange}
+          onChange={props.handleChange}
           id="searchBar"
           type="text"
           placeholder="  Symbol / Ticker"
@@ -20,8 +19,10 @@ function SearchForm() {
           required
         />
 
-        {/* <Link to="/details/:ticker"> */}
-        <button className="btn-submit">🔍</button>
+        {/* <Link to={`/details/${searchString}`}> */}
+        <button type="submit" className="btn-submit">
+          🔍
+        </button>
         {/* </Link> */}
       </form>
     </div>

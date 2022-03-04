@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
+import Logo from "./Final.png";
 
 function Header(props) {
   return (
     <div className="header">
-      <Link to="/">
+      <Link className="brand-link" to="/">
         <div className="brand">
-          <h1>TriFle</h1>
-          <h2>For your Financial Freedom</h2>
+          <img className="logo" src={Logo} alt="LOGO" />
         </div>
       </Link>
       <SearchForm />
       <div className="nav-right">
-        <Link to="/about">
+        <Link id="nav-right" to="/about">
           <h2 className="about-link">About</h2>
         </Link>
-        <Link to="/news">
+        <Link id="nav-right" to="/news">
           <h2 className="news-link">News</h2>
         </Link>
       </div>

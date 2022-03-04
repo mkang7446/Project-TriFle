@@ -1,22 +1,156 @@
 body {
-  background-color: blanchedalmond;
+  background-color: rgb(214, 211, 211, 0.5);
+  font-family: sans-serif;
 }
 
 /* HEADER */
 .header {
-  background-color: rgb(64, 226, 43);
+  background-color: white;
   display: flex;
   justify-content: space-between;
+  border-bottom: 3.5px solid rgba(214, 211, 211, 0.4);
 }
 
 .nav-right {
   display: flex;
+  margin-right: 100px;
+}
+
+#nav-right {
+  margin-top: 7px;
+  text-decoration: none;
+  color: blue;
 }
 
 .news-link {
   margin-left: 20px;
 }
 
-.search-bar {
-  margin-top: 30px;
+#searchBar {
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(241, 241, 241);
+  border: none;
+  font-size: 17px;
+}
+
+.btn-submit {
+  margin-left: 7px;
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(241, 241, 241);
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 40px;
+  height: 45px;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+
+/* MAIN */
+
+main {
+  margin-left: 30px;
+}
+
+.words {
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 0;
+  margin-left: 44px;
+}
+
+.brand-link {
+  margin-left: 50px;
+  text-decoration: none;
+  color: cornflowerblue;
+  font-style: italic;
+}
+
+/* Buttons */
+
+.biggest-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  background-color: black;
+  width: 1000px;
+  height: 600px;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr 2fr;
+  grid-template-rows: 3fr 3fr 2fr 2fr;
+  gap: 20px;
+  font-size: 25px;
+  border: 20px solid black;
+}
+#btn {
+  text-decoration: none;
+  color: black;
+}
+#btn :hover {
+}
+
+.sentence {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn-aapl {
+  grid-column: 1 / span 2;
+  background-color: red;
+}
+
+.btn-tsla {
+  grid-row: 2 / span 2;
+  background-color: orange;
+}
+
+.btn-msft {
+  grid-column: 3 / span 1;
+  background-color: yellow;
+}
+
+.btn-goog {
+  grid-row: 3 / span 2;
+  background-color: green;
+}
+
+.btn-amzn {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 2;
+  background-color: blue;
+}
+
+.btn-fb {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+  background-color: #54476b;
+}
+
+.btn-nvda {
+  background-color: purple;
+}
+
+.btn-brk {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+  background-color: #c77dff;
 }

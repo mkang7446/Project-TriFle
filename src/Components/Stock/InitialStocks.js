@@ -29,16 +29,15 @@ function InitialStocks(props) {
     return null;
   }
 
+  arr.sort((a, b) => a - b);
+  console.log(arr);
+  console.log(initialStocks);
+
   return (
     <div className="main">
       <h1 style={{ color: "red" }} className="sentence">
         HOT STOCKS🌶
       </h1>
-      {/* <div className="container">
-        {initialStocks.map((element) => {
-          for (let each of element) return <p>{element.c}</p>;
-        })}
-      </div> */}
       {/* <p>
         <Link id="btn" className="btn-aapl" to="/details/AAPL">
           AAPL
@@ -64,7 +63,7 @@ function InitialStocks(props) {
           GOOG
         </Link>
       </p> */}
-      {/* <Link id="btn" className="btn-aapl" to="/details/AAPL">
+      <Link id="btn" className="btn-aapl" to="/details/AAPL">
         <div id="initial-stocks" className="apple">
           <div className="infoLeft">
             <p className="left1">AAPL</p>
@@ -248,7 +247,7 @@ function InitialStocks(props) {
             </p>
           </div>
         </div>
-      </Link> */}
+      </Link>
     </div>
   );
 }

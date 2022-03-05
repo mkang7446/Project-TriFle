@@ -61,7 +61,7 @@ body {
 
 /* MAIN */
 
-/* main {
+main {
   margin-left: 30px;
 }
 
@@ -78,8 +78,6 @@ body {
   color: cornflowerblue;
   font-style: italic;
 }
-
-INITIAL STOCKS
 
 #initial-stocks {
   border: 2px solid black;
@@ -131,7 +129,7 @@ INITIAL STOCKS
 .mid1 {
   margin-left: 15px;
   margin-top: 15px;
-  font-size: 50px;
+  font-size: 48px;
 }
 
 .mid2 {
@@ -150,4 +148,4 @@ INITIAL STOCKS
 .infoRight p {
   text-align: left;
   margin-left: 20px;
-} */
+}

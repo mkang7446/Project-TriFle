@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import { SymbolContext } from "../../Context/SymbolContext";
-import { Link } from "react-router-dom";
 
 function SearchForm(props) {
   const { searchString } = useContext(SymbolContext);
-  console.log(searchString);
   return (
     <div className="search-bar">
       <form onSubmit={props.handleSubmit}>

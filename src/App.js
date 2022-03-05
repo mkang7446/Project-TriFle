@@ -17,7 +17,6 @@ function App() {
   const [quote, setQuote] = useState([]);
   const [info, setInfo] = useState([]);
   const [searchString, setSearchString] = useState("");
-  console.log(quote, info);
 
   // HANDEL FUNCTIONS
   function handleChange(event) {

@@ -65,6 +65,19 @@ body {
 
 /* MAIN */
 
+.homepage {
+  display: flex;
+}
+
+.news {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.sentence {
+  margin-left: 30px;
+}
+
 main {
   margin-left: 30px;
   display: flex;
@@ -90,7 +103,6 @@ main {
   height: 120px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-left: 15px;
 }
@@ -156,29 +168,25 @@ main {
   margin-left: 20px;
 }
 
-.apple {
+.initial-box {
   box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
   background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
 }
 
-.tsla {
-  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
-  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+/* NEWS */
+
+.news {
+  margin-top: 40px;
+}
+.newsSection {
+  margin-bottom: 18px;
+  width: 550px;
+  height: 115px;
+  display: flex;
 }
 
-.amzn {
-  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
-  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+.newsImage {
+  margin-right: 15px;
+  width: 200px;
+  height: 115px;
 }
-
-.fb {
-  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
-  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
-}
-
-.goog {
-  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
-  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
-}
-
-/* DETAIL */

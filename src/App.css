@@ -13,28 +13,32 @@ body {
 
 .nav-right {
   display: flex;
+  justify-content: space-around;
   margin-right: 100px;
 }
 
 #nav-right {
   margin-top: 7px;
   text-decoration: none;
-  color: blue;
+  color: #007cff;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-link {
+  margin-left: 30px;
 }
 
 .news-link {
-  margin-left: 20px;
-}
-
-.search-bar {
-  margin-right: 140px;
+  margin-left: 30px;
 }
 
 #searchBar {
   margin-top: 20px;
   width: 400px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgb(241, 241, 241);
   border: none;
   font-size: 17px;
@@ -44,7 +48,7 @@ body {
   margin-left: 7px;
   width: 50px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgb(241, 241, 241);
   border: none;
   font-size: 20px;
@@ -63,6 +67,7 @@ body {
 
 main {
   margin-left: 30px;
+  display: flex;
 }
 
 .words {
@@ -80,7 +85,7 @@ main {
 }
 
 #initial-stocks {
-  border: 2px solid black;
+  border-radius: 20px;
   width: 1000px;
   height: 120px;
   margin-bottom: 20px;
@@ -97,12 +102,12 @@ main {
 
 #btn {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .left1 {
   margin-top: 15px;
   margin-left: 20px;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 50px;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -112,10 +117,10 @@ main {
   margin-top: 5px;
   margin-left: 10px;
   padding-top: 0;
-  font-weight: 900;
+  font-weight: 300;
   font-size: 30px;
   font-style: italic;
-  color: blue;
+  color: black;
 }
 
 .infoMid {
@@ -142,10 +147,38 @@ main {
   width: 300px;
   height: 100px;
   font-size: 18px;
-  color: green;
+  color: white;
+  opacity: 0.8;
 }
 
 .infoRight p {
   text-align: left;
   margin-left: 20px;
 }
+
+.apple {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+}
+
+.tsla {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+}
+
+.amzn {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+}
+
+.fb {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+}
+
+.goog {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
+}
+
+/* DETAIL */

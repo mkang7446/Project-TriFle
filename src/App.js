@@ -66,37 +66,10 @@ function App() {
     getInfo(searchString);
   }, []);
 
-  const open = quote.o;
-  const high = quote.h;
-  const low = quote.l;
-  const price = quote.c;
-  const change = quote.d;
-  const changePercent = quote.dp;
-  const exchange = info.exchange;
-  const industry = info.finnhubIndustry;
-  const ipo = info.ipo;
-  const logo = info.logo;
-  const name = info.name;
-  const ticker = info.ticker;
-  const companyURL = info.weburl;
-
   return (
     <SymbolContext.Provider
       value={{
         searchString,
-        open,
-        high,
-        low,
-        price,
-        change,
-        changePercent,
-        exchange,
-        industry,
-        ipo,
-        logo,
-        name,
-        ticker,
-        companyURL,
       }}
     >
       <div className="App">
@@ -105,7 +78,7 @@ function App() {
           <Routes>
             <Route path="/" element={<InitialStocks />} />
             <Route path="/about" element={<About />} />
-            <Route path="/news" element={<News />} />
+            {/* <Route path="/news" element={<News />} /> */}
             <Route
               path="/details/:ticker"
               element={<StockDetails quote={quote} info={info} />}
@@ -115,6 +88,7 @@ function App() {
               path="/details/:ticker"
               element={<Navigate to="/details/:ticker" />}
             />
+            {/* <Route path="/" element={<Navigate to="/detail/:ticker" />} /> */}
           </Routes>
         </main>
       </div>

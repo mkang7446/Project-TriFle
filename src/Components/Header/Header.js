@@ -16,6 +16,9 @@ function Header(props) {
         handleSubmit={props.handleSubmit}
       />
       <div className="nav-right">
+        <Link id="nav-right" to="/">
+          <h2 className="home-link">Home</h2>
+        </Link>
         <Link id="nav-right" to="/about">
           <h2 className="about-link">About</h2>
         </Link>

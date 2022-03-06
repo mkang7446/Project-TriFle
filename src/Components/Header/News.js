@@ -1,22 +1,20 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
 function News(props) {
+  // const [news, setNews] = useState([]);
+
+  // const key = process.env.REACT_APP_FINN_KEY;
+
   // useEffect(() => {
-  //   if (initialStocks.length > 0) {
-  //     return;
-  //   }
-  //   for (let i = 0; i < arr.length; i++) {
-  //     const url = `https://finnhub.io/api/v1/quote?symbol=${arr[i]}&token=${key}`;
-  //     fetch(url)
-  //       .then((res) => res.json())
-  //       .then((data) =>
-  //         setInitialStocks((initialStocks) => [...initialStocks, data])
-  //       )
-  //       .catch(console.error);
-  //   }
+  //   const url = `https://finnhub.io/api/v1/news?category=general&token=c8gj6caad3i9apciqak0`;
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => setNews(data))
+  //     .catch(console.error);
   // }, []);
 
-  return <div>Hello from News!</div>;
+  return <div className="news">hello</div>;
 }
 
 export default News;

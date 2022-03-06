@@ -1,40 +1,116 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import News from "../Header/News";
 
 function InitialStocks(props) {
   const { ticker } = useParams();
   const [initialStocks, setInitialStocks] = useState([]);
-  console.log(initialStocks);
+  console.log("line 9: ", initialStocks);
 
   const key = process.env.REACT_APP_FINN_KEY;
-  let arr = ["TSLA", "AMZN", "AAPL", "FB", "GOOG"];
+  // let arr = ["TSLA", "AMZN", "AAPL", "FB", "GOOG"];
+  let arr = [
+    {
+      ticker: "TSLA",
+      companyName: "Tesla",
+    },
+    {
+      ticker: "AAPL",
+      companyName: "Apple Inc",
+    },
+    {
+      ticker: "AMZN",
+      companyName: "Amazon",
+    },
+    {
+      ticker: "FB",
+      companyName: "Meta Plats",
+    },
+    {
+      ticker: "GOOG",
+      companyName: "Google",
+    },
+  ];
 
-  useEffect(() => {
-    if (initialStocks.length > 0) {
-      return;
-    }
+  const fetchPromises = [];
+
+  console.log("line 32: ", initialStocks);
+
+  useEffect( () => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+  
     for (let i = 0; i < arr.length; i++) {
-      const url = `https://finnhub.io/api/v1/quote?symbol=${arr[i]}&token=${key}`;
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) =>
-          setInitialStocks((initialStocks) => [...initialStocks, data])
-        )
-        .catch(console.error);
-    }
-  }, []);
+      const url = `https://finnhub.io/api/v1/quote?symbol=${arr[i].ticker}&token=${key}`;
+      fetchPromises.push(fetch(url));
 
-  if (initialStocks.length === 0) {
-    return null;
+    }
+    await Promise.all(fetchPromises).then((data) => {
+      console.log(data);
+      const responses = data.map((element) => {
+        return element.json();
+      });
+      console.log(responses);
+      return Promise.all(responses)
+      .then( data => {
+        console.log(data);
+        setInitialStocks(data)
+      })
+    })
   }
 
-  arr.sort((a, b) => a - b);
-  console.log(arr);
-  console.log(initialStocks);
+
+
+  const renderComponent = () => {
+    console.log(initialStocks);
+    return initialStocks.map((element, idx) => {
+      console.log(element);
+      return (
+        <Link id="btn" className="btn-aapl" to={`/details/${arr[idx].ticker}`}>
+          <div id="initial-stocks" className="apple">
+            <div className="infoLeft">
+              <p className="left1">{arr[idx].ticker}</p>
+              <p className="left2">{arr[idx].companyName}</p>
+            </div>
+            <div
+              style={
+                parseInt(element.d) > 0
+                  ? { color: "green" }
+                  : { color: "#FF506A" }
+              }
+              className="infoMid"
+            >
+              <p className="mid1">
+                ${element.c}
+                {"         "}
+                {parseInt(element.d) > 0 ? "⬆︎" : "⬇︎"}
+              </p>
+              <p className="mid2">
+                ({parseInt(element.d) > 0 ? "$" : "-$"}
+                {parseInt(element.d) > 0 && element.d}
+                {parseInt(element.d) < 0 &&
+                  element["d"].toString().slice(1)} , {element.dp}%)
+              </p>
+            </div>
+            <div className="infoRight">
+              <p>
+                High: ${element.h} Low: ${element.l}
+              </p>
+              <p>
+                Open: ${element.c} Close: ${element.pc}
+              </p>
+            </div>
+          </div>
+        </Link>
+      );
+    });
+  };
 
   return (
-    <div className="main">
+    <div className="initialStocks">
       <h1 style={{ color: "red" }} className="sentence">
         HOT STOCKS🌶
       </h1>
@@ -63,7 +139,8 @@ function InitialStocks(props) {
           GOOG
         </Link>
       </p> */}
-      <Link id="btn" className="btn-aapl" to="/details/AAPL">
+      {renderComponent()}
+      {/* <Link id="btn" className="btn-aapl" to="/details/AAPL">
         <div id="initial-stocks" className="apple">
           <div className="infoLeft">
             <p className="left1">AAPL</p>
@@ -73,7 +150,7 @@ function InitialStocks(props) {
             style={
               parseInt(initialStocks[0].d) > 0
                 ? { color: "green" }
-                : { color: "red" }
+                : { color: "#FF506A" }
             }
             className="infoMid"
           >
@@ -110,7 +187,7 @@ function InitialStocks(props) {
             style={
               parseInt(initialStocks[1].d) > 0
                 ? { color: "green" }
-                : { color: "red" }
+                : { color: "#FF506A" }
             }
             className="infoMid"
           >
@@ -147,7 +224,7 @@ function InitialStocks(props) {
             style={
               parseInt(initialStocks[2].d) > 0
                 ? { color: "green" }
-                : { color: "red" }
+                : { color: "#FF506A" }
             }
             className="infoMid"
           >
@@ -184,7 +261,7 @@ function InitialStocks(props) {
             style={
               parseInt(initialStocks[0].d) > 0
                 ? { color: "green" }
-                : { color: "red" }
+                : { color: "#FF506A" }
             }
             className="infoMid"
           >
@@ -221,14 +298,14 @@ function InitialStocks(props) {
             style={
               parseInt(initialStocks[4].d) > 0
                 ? { color: "green" }
-                : { color: "red" }
+                : { color: "#FF506A" }
             }
             className="infoMid"
           >
             <p className="mid1">
               ${initialStocks[4].c}
               {"         "}
-              {parseInt(initialStocks[4].d) > 0 ? "⬆︎" : "⬇︎"}
+              {parseInt(initialStocks[4].d) > 0 ? "↑" : "↓"}
             </p>
             <p className="mid2">
               ({parseInt(initialStocks[4].d) > 0 ? "$" : "-$"}
@@ -247,7 +324,8 @@ function InitialStocks(props) {
             </p>
           </div>
         </div>
-      </Link>
+      </Link> */}
+      {/* <News /> */}
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import About from "./Components/Header/About";
-import News from "./Components/Header/News";
 import StockDetails from "./Components/Stock/StockDetails";
 import { useNavigate, Navigate } from "react-router-dom";
 
@@ -14,8 +13,9 @@ import InitialStocks from "./Components/Stock/InitialStocks";
 function App() {
   // USESTATE VARIABLES
   let navigate = useNavigate();
-  const [quote, setQuote] = useState([]);
-  const [info, setInfo] = useState([]);
+  const [quote, setQuote] = useState({});
+  const [info, setInfo] = useState({});
+  console.log(info);
   const [searchString, setSearchString] = useState("");
 
   // HANDEL FUNCTIONS
@@ -26,13 +26,24 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault();
     // setSearchString(searchString);
-    getQuote(searchString);
     getInfo(searchString);
-    navigate(`/details/${searchString}`);
-    setSearchString("");
-    console.log("hello world");
+    getQuote(searchString);
+    // navigate(`/details/${searchString}`);
+    // setSearchString("");
+
     // <Link to={`/details/${searchString}`} />;
   }
+
+  // useEffect(() => {
+  //   if (quote.c === 0) {
+  //     alert("NO!");
+  //     setSearchString("");
+  //   }
+  //   if (quote.c > 0) {
+  //     navigate(`/details/${searchString}`);
+  //     setSearchString("");
+  //   }
+  // }, [quote]);
 
   const key = process.env.REACT_APP_FINN_KEY;
 
@@ -42,7 +53,15 @@ function App() {
     fetch(quoteURL)
       .then((res) => res.json())
       .then((data) => {
-        setQuote(data);
+        if (data.c === 0) {
+          alert("Please enter a valide symbol / ticker!");
+          setSearchString("");
+          navigate("/");
+        } else {
+          setQuote(data);
+          navigate(`/details/${searchString}`);
+          setSearchString("");
+        }
       })
       .catch(console.error);
   }
@@ -60,11 +79,16 @@ function App() {
 
   useEffect(() => {
     getQuote(searchString);
-  }, []);
-
-  useEffect(() => {
     getInfo(searchString);
   }, []);
+
+  // useEffect(() => {
+  // getInfo(searchString);
+  // }, []);
+
+  // function clear() {
+  //   setQuote({});
+  // }
 
   return (
     <SymbolContext.Provider

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+// import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 // import { useParams } from "react-router";
+
 import { Link } from "react-router-dom";
 import News from "../Header/News";
 
@@ -42,6 +44,7 @@ function InitialStocks(props) {
       const url = `https://finnhub.io/api/v1/quote?symbol=${arr[i].ticker}&token=${key}`;
       fetchPromises.push(fetch(url));
     }
+
     await Promise.all(fetchPromises).then((data) => {
       const responses = data.map((element) => {
         return element.json();
@@ -57,6 +60,7 @@ function InitialStocks(props) {
     return initialStocks.map((element, idx) => {
       return (
         <Link
+          key={idx}
           id="btn"
           className="linkToDetail"
           to={`/details/${arr[idx].ticker}`}
@@ -69,7 +73,7 @@ function InitialStocks(props) {
             <div
               style={
                 parseInt(element.d.toFixed(2)) > 0
-                  ? { color: "green" }
+                  ? { color: "#adff02" }
                   : { color: "#FF506A" }
               }
               className="infoMid"
@@ -83,7 +87,7 @@ function InitialStocks(props) {
                 ({parseInt(element.d.toFixed(2)) > 0 ? "$" : "-$"}
                 {parseInt(element.d.toFixed(2)) > 0 && element.d.toFixed(2)}
                 {parseInt(element.d.toFixed(2)) < 0 &&
-                  element["d"].toString().slice(1)}{" "}
+                  element["d"].toFixed(2).toString().slice(1)}{" "}
                 , {element.dp.toFixed(2)}%)
               </p>
             </div>
@@ -123,11 +127,11 @@ function InitialStocks(props) {
     <div className="homepage">
       <div className="initialStocks">
         <h1 style={{ color: "black" }} className="sentence">
-          TOP 5 Stocks
+          TOP 5 STOCKS
         </h1>
         {renderStocks()}
       </div>
-      <div className="news">
+      <div className="homepage-news">
         <h1 style={{ color: "black" }} className="news-title">
           STOCK MARKET NEWS
         </h1>

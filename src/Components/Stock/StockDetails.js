@@ -9,8 +9,11 @@ function StockDetails({ info, quote }) {
   // }
   const { ticker } = useParams();
   const [profile, setProfile] = useState([]);
+  console.log(profile);
   const [quoteDetail, setQuoteDetail] = useState([]);
+  console.log(quoteDetail);
   const [infoDetail, setInfoDetail] = useState([]);
+  console.log(infoDetail);
 
   const FKey = process.env.REACT_APP_FINN_KEY;
   const AKey = process.env.REACT_APP_APVT_KEY;
@@ -60,9 +63,14 @@ function StockDetails({ info, quote }) {
     getInfoDetail(ticker);
   }, [ticker]);
 
-  if (!quoteDetail.c || !infoDetail.country) {
-    return "NO RESULT FOUND";
-  }
+  // if (!quoteDetail.c) {
+  //   return (
+  //     <div className="loading">
+  //       <div className="loading"></div>
+  //       <div className="loading-word"> "Loading..."</div>
+  //     </div>
+  //   );
+  // }
 
   if (!quoteDetail || !infoDetail) {
     return "Loading...";

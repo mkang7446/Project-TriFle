@@ -26,11 +26,11 @@ function News(props) {
   const renderNews = () => {
     return news.map((element, idx) => {
       return (
-        <Link
-          to={{
-            pathname: `${element.url}`,
-          }}
-          target="_blank"
+        <a
+          className="news-link"
+          key={idx}
+          href={element.url}
+          target="_blank noreferrer "
         >
           <div className="newsSection">
             <img className="newsImage" src={element.image} alt="news image" />
@@ -39,7 +39,7 @@ function News(props) {
               <h3 className="headline">{element.headline}</h3>
             </div>
           </div>
-        </Link>
+        </a>
       );
     });
   };

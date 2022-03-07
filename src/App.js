@@ -15,7 +15,6 @@ function App() {
   let navigate = useNavigate();
   const [quote, setQuote] = useState({});
   const [info, setInfo] = useState({});
-  console.log(info);
   const [searchString, setSearchString] = useState("");
 
   // HANDEL FUNCTIONS

@@ -9,11 +9,8 @@ function StockDetails({ info, quote }) {
   // }
   const { ticker } = useParams();
   const [profile, setProfile] = useState([]);
-  console.log(profile);
   const [quoteDetail, setQuoteDetail] = useState([]);
-  console.log(quoteDetail);
   const [infoDetail, setInfoDetail] = useState([]);
-  console.log(infoDetail);
 
   const FKey = process.env.REACT_APP_FINN_KEY;
   const AKey = process.env.REACT_APP_APVT_KEY;

@@ -12,7 +12,6 @@ function Graph({ ticker }) {
 
   function getGraph() {
     const url = `https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=W&from=1631022248&to=1646421764&token=${key}`;
-    console.log(url);
 
     fetch(url)
       .then((res) => res.json())

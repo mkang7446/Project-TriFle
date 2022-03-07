@@ -53,7 +53,7 @@ function App() {
     fetch(quoteURL)
       .then((res) => res.json())
       .then((data) => {
-        if (data.c === 0) {
+        if (data.d === null && data !== {}) {
           alert("Please enter a valide symbol / ticker!");
           setSearchString("");
           navigate("/");
@@ -77,10 +77,10 @@ function App() {
       .catch(console.error);
   }
 
-  useEffect(() => {
-    getQuote(searchString);
-    getInfo(searchString);
-  }, []);
+  // useEffect(() => {
+  //   getQuote(searchString);
+  //   getInfo(searchString);
+  // }, []);
 
   // useEffect(() => {
   // getInfo(searchString);

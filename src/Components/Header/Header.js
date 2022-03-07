@@ -22,9 +22,6 @@ function Header(props) {
         <Link id="nav-right" to="/about">
           <h2 className="about-link">About</h2>
         </Link>
-        <Link id="nav-right" to="/news">
-          <h2 className="news-link">News</h2>
-        </Link>
       </div>
     </div>
   );

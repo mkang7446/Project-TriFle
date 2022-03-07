@@ -77,10 +77,22 @@ function Graph({ ticker }) {
                 "rgba(153, 102, 255, 1)",
                 "rgba(255, 159, 64, 1)",
               ],
-              borderWidth: 1,
+              borderWidth: 2,
             },
           ],
         }}
+        // options={{
+        //   plugins: {
+        //     legend: {
+        //       labels: {
+        //         // This more specific font property overrides the global property
+        //         font: {
+        //           size: 18,
+        //         },
+        //       },
+        //     },
+        //   },
+        // }}
       ></Line>
     </div>
   );

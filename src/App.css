@@ -20,18 +20,26 @@ body {
 #nav-right {
   margin-top: 7px;
   text-decoration: none;
-  color: #007cff;
-  margin-left: 20px;
+  color: #0533b1;
+  margin-left: 50px;
   display: flex;
   justify-content: space-around;
+  margin-right: 20px;
 }
 
 .about-link {
   margin-left: 30px;
 }
 
-.news-link {
-  margin-left: 30px;
+.about-link:hover {
+  color: #007cff;
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.home-link:hover {
+  color: #007cff;
+  transform: scale(1.1);
+  transition: 0.3s ease;
 }
 
 #searchBar {
@@ -61,6 +69,11 @@ body {
   height: 45px;
   margin-bottom: 20px;
   padding-bottom: 0;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+  transition: transform 1s ease;
 }
 
 /* MAIN */
@@ -161,11 +174,17 @@ main {
   font-size: 18px;
   color: white;
   opacity: 0.8;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+
+.barGraph {
+  margin-top: 0px;
 }
 
 .infoRight p {
   text-align: left;
-  margin-left: 20px;
 }
 
 .initial-box {
@@ -173,16 +192,35 @@ main {
   background-image: linear-gradient(-41deg, #0533b1 0%, #459ff0 100%);
 }
 
-/* NEWS */
-
-.news {
-  margin-top: 40px;
+.initial-box:hover {
+  box-shadow: 0 3px 20px 0 rgb(0 77 165 / 7%);
+  background-image: linear-gradient(-41deg, #459ff0 0%, #0533b1 100%);
+  transform: scale(1.01);
 }
+
+/* NEWS */
+.news {
+  margin: 0;
+  margin-left: 30px;
+}
+
+.news-title {
+  margin-left: 35px;
+}
+
 .newsSection {
-  margin-bottom: 18px;
+  margin-bottom: 25px;
   width: 550px;
   height: 115px;
   display: flex;
+}
+
+.newsSection:hover {
+  margin-bottom: 25px;
+  width: 550px;
+  height: 115px;
+  display: flex;
+  transform: scale(1.05);
 }
 
 .newsImage {
@@ -191,6 +229,15 @@ main {
   height: 115px;
 }
 
+.source {
+  margin-top: 0;
+  font-weight: 900;
+  font-size: 15px;
+}
+.headline {
+  margin-top: 0;
+  font-size: 20px;
+}
 /* DETAIL */
 
 .detail-container {
@@ -203,6 +250,7 @@ main {
 }
 
 .graph {
+  margin-left: 20px;
   margin-top: 40px;
   margin-right: 50px;
   width: 930px;
@@ -228,17 +276,17 @@ main {
 }
 
 .intro-symbol {
-  margin-top: 20px;
+  margin-top: 35px;
   margin-left: 30px;
-  font-size: 100px;
+  font-size: 70px;
 }
 
 .intro-name {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 40px;
+  margin-left: 60px;
   margin-bottom: 20px;
   text-align: right;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .intro-ex {
@@ -249,10 +297,22 @@ main {
 }
 
 .detail-price {
-  padding-top: 0;
+  margin-top: 40px;
   width: 700px;
   font-size: 50px;
-  height: 100px;
+  height: 40px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-price-words {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 
 .detail-info {
@@ -261,7 +321,7 @@ main {
   margin-top: 20px;
   width: 700px;
   height: 250px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .info-one {
@@ -305,6 +365,38 @@ main {
   font-size: 20px;
 }
 
-.detail-price-words {
-  text-align: center;
+.initial-info {
+  margin-left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  height: 100px;
+  font-size: 16px;
+}
+
+.initial-one {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: 900;
+}
+.initial-two {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.initial-three {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: 900;
+}
+
+.initial-four {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

@@ -68,31 +68,50 @@ function InitialStocks(props) {
             </div>
             <div
               style={
-                parseInt(element.d) > 0
+                parseInt(element.d.toFixed(2)) > 0
                   ? { color: "green" }
                   : { color: "#FF506A" }
               }
               className="infoMid"
             >
               <p className="mid1">
-                ${element.c}
+                ${element.c.toFixed(2)}
                 {"         "}
-                {parseInt(element.d) > 0 ? "⬆︎" : "⬇︎"}
+                {parseInt(element.d.toFixed(2)) > 0 ? "⬆︎" : "⬇︎"}
               </p>
               <p className="mid2">
-                ({parseInt(element.d) > 0 ? "$" : "-$"}
-                {parseInt(element.d) > 0 && element.d}
-                {parseInt(element.d) < 0 &&
-                  element["d"].toString().slice(1)} , {element.dp}%)
+                ({parseInt(element.d.toFixed(2)) > 0 ? "$" : "-$"}
+                {parseInt(element.d.toFixed(2)) > 0 && element.d.toFixed(2)}
+                {parseInt(element.d.toFixed(2)) < 0 &&
+                  element["d"].toString().slice(1)}{" "}
+                , {element.dp.toFixed(2)}%)
               </p>
             </div>
             <div className="infoRight">
-              <p>
-                High: ${element.h} Low: ${element.l}
+              <div className="initial-info">
+                <div className="initial-one">
+                  <p>LOW: </p>
+                  <p>OPEN: </p>
+                </div>
+                <div className="initial-two">
+                  <p>${element.l.toFixed(2)} </p>
+                  <p>${element.o.toFixed(2)} </p>
+                </div>
+                <div className="initial-three">
+                  <p>HIGH: </p>
+                  <p>CLOSE: </p>
+                </div>
+                <div className="initial-four">
+                  <p>${element.h.toFixed(2)} </p>
+                  <p>${element.pc.toFixed(2)}</p>
+                </div>
+              </div>
+              {/* <p>
+                High: ${element.h.toFixed(2)} Low: ${element.l.toFixed(2)}
               </p>
               <p>
-                Open: ${element.c} Close: ${element.pc}
-              </p>
+                Open: ${element.c.toFixed(2)} Close: ${element.pc.toFixed(2)}
+              </p> */}
             </div>
           </div>
         </Link>
@@ -109,6 +128,9 @@ function InitialStocks(props) {
         {renderStocks()}
       </div>
       <div className="news">
+        <h1 style={{ color: "black" }} className="news-title">
+          STOCK MARKET NEWS
+        </h1>
         <News />
       </div>
     </div>

@@ -190,3 +190,121 @@ main {
   width: 200px;
   height: 115px;
 }
+
+/* DETAIL */
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  display: flex;
+}
+
+.graph {
+  margin-top: 40px;
+  margin-right: 50px;
+  width: 930px;
+  height: 520px;
+}
+
+.detail-intro {
+  width: 700px;
+  display: flex;
+  height: 140px;
+}
+
+.intro-logo {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.intro-head {
+  display: flex;
+}
+
+.intro-symbol {
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 100px;
+}
+
+.intro-name {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.intro-ex {
+  margin-top: 0px;
+  margin-left: 30px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.detail-price {
+  padding-top: 0;
+  width: 700px;
+  font-size: 50px;
+  height: 100px;
+}
+
+.detail-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 700px;
+  height: 250px;
+  font-size: 15px;
+}
+
+.info-one {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 150px;
+  height: 250px;
+}
+.info-two {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100px;
+  height: 250px;
+}
+
+.info-three {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 150px;
+  height: 250px;
+}
+
+.info-four {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100px;
+  height: 250px;
+}
+
+.description {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.detail-price-words {
+  text-align: center;
+}

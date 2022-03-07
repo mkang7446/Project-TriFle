@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 function News(props) {
   const [news, setNews] = useState([]);
-  console.log(news);
 
   const key = process.env.REACT_APP_FINN_KEY;
 
   function getNews(searchString) {
-    const url = `https://finnhub.io/api/v1/news?category=general&token=${key} `;
+    const url = `https://finnhub.io/api/v1/news?category=general&token=${key}`;
 
     fetch(url)
       .then((res) => res.json())

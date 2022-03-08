@@ -84,11 +84,11 @@ function InitialStocks(props) {
                 {parseInt(element.d.toFixed(2)) > 0 ? "⬆︎" : "⬇︎"}
               </p>
               <p className="mid2">
-                ({parseInt(element.d.toFixed(2)) > 0 ? "$" : "-$"}
+                {parseInt(element.d.toFixed(2)) > 0 ? "+$" : "-$"}
                 {parseInt(element.d.toFixed(2)) > 0 && element.d.toFixed(2)}
                 {parseInt(element.d.toFixed(2)) < 0 &&
                   element["d"].toFixed(2).toString().slice(1)}{" "}
-                , {element.dp.toFixed(2)}%)
+                ({element.dp.toFixed(2)}%)
               </p>
             </div>
             <div className="infoRight">

@@ -57,7 +57,7 @@ function Crypto(props) {
               className="crypto-price-words"
               style={
                 parseInt(element.price_change_24h.toFixed(2)) > 0
-                  ? { color: "green" }
+                  ? { color: "#0CAF82" }
                   : { color: "#FF506A" }
               }
             >

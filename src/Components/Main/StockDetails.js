@@ -109,13 +109,13 @@ function StockDetails({ info, quote }) {
               className="detail-price-words"
               style={
                 parseInt(quoteDetail.d) > 0
-                  ? { color: "#adff02" }
+                  ? { color: "#0CAF82" }
                   : { color: "#FF506A" }
               }
             >
               {parseInt(quoteDetail.d) > 0 ? "⬆︎" : "⬇︎"}
               {"         "}${quoteDetail.c}
-              {"         "}({parseInt(quoteDetail.d) > 0 ? "$" : "-$"}
+              {"         "}({parseInt(quoteDetail.d) > 0 ? "+$" : "-$"}
               {parseInt(quoteDetail.d) > 0 && quoteDetail.d}
               {parseInt(quoteDetail.d) < 0 &&
                 quoteDetail["d"].toString().slice(1)}{" "}

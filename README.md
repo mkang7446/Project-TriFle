@@ -3,10 +3,7 @@
 <img display="center" src="/src/Resouces/Logo%20for%20Readme.png"></img>
 <p>
 
-
-# Project - TriFLe
-
-## Project Description 
+### Project Description 
 > My project, TriFle is a real time stock search app that lets a user search stock price, stock market news and all listed companies' information.
 
 ## URL
@@ -15,16 +12,23 @@
 ## Demo
 
 ## Wire Frames
-![P1 -Wire Frame](https://user-images.githubusercontent.com/92760530/157141921-df45da24-829c-4b38-a7a6-1cb6e4a689d9.png)
+![P1 - Wire Frame](https://user-images.githubusercontent.com/92760530/157293971-5766d8a5-bd0e-4b3a-b399-41fca1053b8f.png)
 
-## Link to the APIs I used
+## APIs used
 > https://www.alphavantage.co/
 > https://finnhub.io/
+> https://www.coingecko.com/
 
-## Component hierarchy
-![P1 - Component Hierarchy](https://user-images.githubusercontent.com/92760530/157141891-e0ae603a-a862-4ebc-b708-295e571af990.png)
+## Technologies Used
+* HTML
+* CSS
+* React
+* Chart.js
+* Npm
 
-## Example data response you plan to use
+## Component Hierarchy
+![P1 - Component Hierachy](https://user-images.githubusercontent.com/92760530/157293978-05d0ce96-03ee-4b8a-8d5c-3b1404265b30.png)
+
 
 ### Finnhub API
 > #1 Simple Quote
@@ -122,6 +126,40 @@ c: [
     DividendDate: "2022-03-10",
     ExDividendDate: "2022-02-10"
 }
+```
+
+### CoinGecko API
+```
+[
+{
+id: "bitcoin",
+symbol: "btc",
+name: "Bitcoin",
+image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+current_price: 39094,
+market_cap: 735415412048,
+market_cap_rank: 1,
+fully_diluted_valuation: 813780840693,
+total_volume: 25795543552,
+high_24h: 39101,
+low_24h: 37275,
+price_change_24h: 375.9,
+price_change_percentage_24h: 0.97085,
+market_cap_change_24h: -167928909.08007812,
+market_cap_change_percentage_24h: -0.02283,
+circulating_supply: 18977743,
+total_supply: 21000000,
+max_supply: 21000000,
+ath: 69045,
+ath_change_percentage: -43.88102,
+ath_date: "2021-11-10T14:24:11.849Z",
+atl: 67.81,
+atl_change_percentage: 57041.71035,
+atl_date: "2013-07-06T00:00:00.000Z",
+roi: null,
+last_updated: "2022-03-08T17:38:25.918Z"
+},
+]
 ```
 
 ## User Stories

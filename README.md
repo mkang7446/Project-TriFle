@@ -10,8 +10,8 @@
 > https://loving-knuth-39ffe9.netlify.app
 
 ## Demo
-> https://user-images.githubusercontent.com/92760530/157303366-cdb60c3f-ce3c-42b7-91e1-bad65e8fb85e.mp4
-> 
+> ![Demo](https://user-images.githubusercontent.com/92760530/157303843-4f4b1078-087e-4ca2-a0eb-d3669ad7911b.gif)
+
 ## Wire Frames
 ![P1 - Wire Frame](https://user-images.githubusercontent.com/92760530/157293971-5766d8a5-bd0e-4b3a-b399-41fca1053b8f.png)
 

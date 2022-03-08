@@ -1,52 +1,76 @@
+
+<img display="center" src="src/Logo for Readme.png"></img>
+
+
 # Project - TriFLe
 
 ## Project Description 
-> Stock market is really important nowadays. Not only it helps individuals or organizations earn a profit, but also just tracking stocks allows people to comprehend economic knowledge. In addition, you may just take a look at a company’s stock price for fun! This app is a stock tracking app, called TriFle (For your Financial Freedom), for people who want to manage their own stock portfolio and see the most recent news in the stock market. Users can see search results that show stock price and all information and then click on a specific company to see detail. Users also can add or remove the company on their portfolio so that they can simultaneously see all the interesting stocks which are located in a separate section. In the future, I want to add stock trading features so that users can actually buy and sell on the application. 
+> My project, TriFle is a real time stock search app that lets a user search stock price, stock market news and all listed companies' information.
+
+## URL
+> https://loving-knuth-39ffe9.netlify.app
+
+## Demo
 
 ## Wire Frames
-![P1 - Wireframe](https://user-images.githubusercontent.com/92760530/156300493-b8af0943-fd71-4be2-86a8-ccc801a130f9.png)
+![P1 -Wire Frame](https://user-images.githubusercontent.com/92760530/157141921-df45da24-829c-4b38-a7a6-1cb6e4a689d9.png)
 
-## Link to the API you plan to use
+## Link to the APIs I used
 > https://www.alphavantage.co/
+> https://finnhub.io/
+
+## Component hierarchy
+![P1 - Component Hierarchy](https://user-images.githubusercontent.com/92760530/157141891-e0ae603a-a862-4ebc-b708-295e571af990.png)
 
 ## Example data response you plan to use
 
-> ### First data example
+### Finnhub API
+> #1 Simple Quote
 ```
 {
-Meta Data: {
-    1. Information: "Daily Prices (open, high, low, close) and Volumes",
-    2. Symbol: "IBM",
-    3. Last Refreshed: "2022-03-01",
-    4. Output Size: "Compact",
-    5. Time Zone: "US/Eastern"
-    },
-Time Series (Daily): {
-    2022-03-01: {
-        1. open: "122.6700",
-        2. high: "123.3900",
-        3. low: "120.7000",
-        4. close: "121.3500",
-        5. volume: "4873331"
-    },
-    2022-02-28: {
-        1. open: "122.2100",
-        2. high: "123.3851",
-        3. low: "121.0388",
-        4. close: "122.5100",
-        5. volume: "6757332"
-    },
-    2022-02-25: {
-        1. open: "122.0500",
-        2. high: "124.2625",
-        3. low: "121.4500",
-        4. close: "124.1800",
-        5. volume: "4460904"
-     }
- }
+c: 159.3,
+d: -3.87,
+dp: -2.3718,
+h: 165.02,
+l: 159.04,
+o: 163.36,
+pc: 163.17,
+t: 1646686803
+}
 ```
-    
-> ### Second data example
+> #2 6 months candlestick data
+```
+{
+c: [
+155.23,
+155.1,
+155.26,
+155.15,
+155.18,
+155.27,
+155.15,
+155.1,
+155.18,
+155.19,
+155.41,
+155.51,
+155.61,
+155.565,
+155.71,
+155.66,
+155.69,
+155.85,
+155.855,
+155.72,
+155.65,
+155.49,
+155.44,
+155.688
+]
+}
+```
+
+### Alpha Vantage API
 ```
 {
     Symbol: "IBM",
@@ -98,16 +122,11 @@ Time Series (Daily): {
 }
 ```
 
-## Component hierarchy
-![P1 - Component Hierarchy](https://user-images.githubusercontent.com/92760530/156300538-e4181447-275d-435a-a408-0e5e6372194d.png)
-
-
 ## User Stories
 > 
-* As a user, I want to see a clear header including navigation bar and search bar.
+* As a user, I want to see a clearly seperated header and main sections with initial top 5 companies' stock information.
 * As a user, I want to search for a company by symbol or name and click a link to view stock details such as description, price graph and other information.
 * As a user, I want to go to About and News pages to see contents by clicking buttons on the navigation bar.
-* As a user, I want to add or remove a specific company on my favorite list (Portfolio) with very simple information.
 * As a user, I want to be able to use this application on a mobile friendly version.
 
 ## MVP Goals
@@ -116,11 +135,12 @@ Time Series (Daily): {
 * Make functions in each component and check if imported & exported successfully.
 * Render useState & useEffect and fetch.
 * Build Header section with search input bar and links into About & News.
+* Make top 5 companies stock info for default when the application is loaded at first time.
 * Build Routes and make a link to get into stock information with details.
-* Find a graph library and apply it in each detail page.
+* Add error handling statements.
 
 ## MVP Stretch Goals
 >
-* Make top 5 companies stock info for default when the application is loaded at first time.
-* Apply a small version of the graph into my favorite list.
+* Find a graph library and apply it in each detail page.
 * Create my own logo and text design.
+* Apply a small version of the graph into my favorite list.

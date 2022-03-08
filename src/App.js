@@ -11,38 +11,21 @@ import { Route, Routes } from "react-router-dom";
 import InitialStocks from "./Components/Stock/InitialStocks";
 
 function App() {
-  // USESTATE VARIABLES
   let navigate = useNavigate();
+
   const [quote, setQuote] = useState({});
   const [info, setInfo] = useState({});
   const [searchString, setSearchString] = useState("");
 
-  // HANDEL FUNCTIONS
   function handleChange(event) {
     setSearchString(event.target.value.toUpperCase());
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    // setSearchString(searchString);
     getInfo(searchString);
     getQuote(searchString);
-    // navigate(`/details/${searchString}`);
-    // setSearchString("");
-
-    // <Link to={`/details/${searchString}`} />;
   }
-
-  // useEffect(() => {
-  //   if (quote.c === 0) {
-  //     alert("NO!");
-  //     setSearchString("");
-  //   }
-  //   if (quote.c > 0) {
-  //     navigate(`/details/${searchString}`);
-  //     setSearchString("");
-  //   }
-  // }, [quote]);
 
   const key = process.env.REACT_APP_FINN_KEY;
 
@@ -76,19 +59,6 @@ function App() {
       .catch(console.error);
   }
 
-  // useEffect(() => {
-  //   getQuote(searchString);
-  //   getInfo(searchString);
-  // }, []);
-
-  // useEffect(() => {
-  // getInfo(searchString);
-  // }, []);
-
-  // function clear() {
-  //   setQuote({});
-  // }
-
   return (
     <SymbolContext.Provider
       value={{
@@ -101,17 +71,14 @@ function App() {
           <Routes>
             <Route path="/" element={<InitialStocks />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/news" element={<News />} /> */}
             <Route
               path="/details/:ticker"
               element={<StockDetails quote={quote} info={info} />}
             />
-            {/* use navigae to link to stockdetail */}
             <Route
               path="/details/:ticker"
               element={<Navigate to="/details/:ticker" />}
             />
-            {/* <Route path="/" element={<Navigate to="/detail/:ticker" />} /> */}
           </Routes>
         </main>
       </div>

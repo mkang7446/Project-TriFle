@@ -17,6 +17,7 @@ function App() {
   const [quote, setQuote] = useState({});
   const [info, setInfo] = useState({});
   const [searchString, setSearchString] = useState("");
+  const [graph, setGraph] = useState([]);
 
   function handleChange(event) {
     setSearchString(event.target.value.toUpperCase());
@@ -26,6 +27,20 @@ function App() {
     event.preventDefault();
     getInfo(searchString);
     getQuote(searchString);
+    getGraph(searchString);
+  }
+
+  const graphKey = process.env.REACT_APP_FINN_KEY;
+
+  function getGraph(searchString) {
+    const url = `https://finnhub.io/api/v1/stock/candle?symbol=${searchString}&resolution=W&from=1631022248&to=1646421764&token=${graphKey}`;
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setGraph(data.c);
+      })
+      .catch(console.error);
   }
 
   const key = process.env.REACT_APP_FINN_KEY;
@@ -75,7 +90,14 @@ function App() {
             <Route path="/crypto" element={<Crypto />} />
             <Route
               path="/details/:ticker"
-              element={<StockDetails quote={quote} info={info} />}
+              element={
+                <StockDetails
+                  getGraph={getGraph}
+                  graph={graph}
+                  quote={quote}
+                  info={info}
+                />
+              }
             />
             <Route
               path="/details/:ticker"

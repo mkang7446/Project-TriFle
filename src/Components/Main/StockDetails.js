@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Graph from "./Graph";
 
-function StockDetails({ info, quote }) {
+function StockDetails({ getGraph, graph, info, quote }) {
   // if (!info.length && !quote.length) {
   //   return "NO RESULT FOUND";
   // }
@@ -10,6 +10,21 @@ function StockDetails({ info, quote }) {
   const [profile, setProfile] = useState([]);
   const [quoteDetail, setQuoteDetail] = useState([]);
   const [infoDetail, setInfoDetail] = useState([]);
+  const [detailGraph, setDetailGraph] = useState([]);
+  console.log(detailGraph);
+
+  const graphKey = process.env.REACT_APP_FINN_KEY;
+
+  function getDetailGraph(searchString) {
+    const url = `https://finnhub.io/api/v1/stock/candle?symbol=${searchString}&resolution=W&from=1631022248&to=1646421764&token=${graphKey}`;
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setDetailGraph(data.c);
+      })
+      .catch(console.error);
+  }
 
   const FKey = process.env.REACT_APP_FINN_KEY;
   const AKey = process.env.REACT_APP_APVT_KEY;
@@ -46,6 +61,11 @@ function StockDetails({ info, quote }) {
       })
       .catch(console.error);
   }
+
+  useEffect(() => {
+    console.log("hello");
+    getDetailGraph(ticker);
+  }, [ticker]);
 
   useEffect(() => {
     getProfile(ticker);
@@ -150,7 +170,7 @@ function StockDetails({ info, quote }) {
           </div>
         </div>
 
-        <Graph ticker={ticker} />
+        <Graph graph={graph} detailGraph={detailGraph} />
       </div>
       <div className="description">{profile.Description}</div>
     </div>

@@ -1,5 +1,7 @@
 
+<p align="center">
 <img display="center" src="/src/Resouces/Logo%20for%20Readme.png"></img>
+<p>
 
 
 # Project - TriFLe

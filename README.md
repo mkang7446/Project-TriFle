@@ -10,21 +10,22 @@
 > https://loving-knuth-39ffe9.netlify.app
 
 ## Demo
-
+> https://user-images.githubusercontent.com/92760530/157303366-cdb60c3f-ce3c-42b7-91e1-bad65e8fb85e.mp4
+> 
 ## Wire Frames
 ![P1 - Wire Frame](https://user-images.githubusercontent.com/92760530/157293971-5766d8a5-bd0e-4b3a-b399-41fca1053b8f.png)
 
 ## APIs used
-> https://www.alphavantage.co/
-> https://finnhub.io/
-> https://www.coingecko.com/
+* https://www.alphavantage.co/
+* https://finnhub.io/
+* https://www.coingecko.com/
 
 ## Technologies Used
 * HTML
 * CSS
 * React
 * Chart.js
-* Npm
+* NPM
 
 ## Component Hierarchy
 ![P1 - Component Hierachy](https://user-images.githubusercontent.com/92760530/157293978-05d0ce96-03ee-4b8a-8d5c-3b1404265b30.png)

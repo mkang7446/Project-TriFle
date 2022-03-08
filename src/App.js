@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import About from "./Components/Header/About";
-import StockDetails from "./Components/Stock/StockDetails";
+import StockDetails from "./Components/Main/StockDetails";
 import { useNavigate, Navigate } from "react-router-dom";
 
 import { SymbolContext } from "./Context/SymbolContext";
 
 import { Route, Routes } from "react-router-dom";
-import InitialStocks from "./Components/Stock/InitialStocks";
+import InitialStocks from "./Components/Main/InitialStocks";
 
 function App() {
   let navigate = useNavigate();

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import About from "./Components/Header/About";
+import Crypto from "./Components/Main/Crypto";
 import StockDetails from "./Components/Main/StockDetails";
 import { useNavigate, Navigate } from "react-router-dom";
 
@@ -71,6 +72,7 @@ function App() {
           <Routes>
             <Route path="/" element={<InitialStocks />} />
             <Route path="/about" element={<About />} />
+            <Route path="/crypto" element={<Crypto />} />
             <Route
               path="/details/:ticker"
               element={<StockDetails quote={quote} info={info} />}

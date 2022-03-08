@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
-import { SymbolContext } from "../../Context/SymbolContext";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Graph from "./Graph";
 
@@ -75,7 +74,7 @@ function StockDetails({ info, quote }) {
 
   function nFormatter(num) {
     if (num >= 1000000000) {
-      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
+      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "B";
     }
     if (num >= 1000000) {
       return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
@@ -110,8 +109,8 @@ function StockDetails({ info, quote }) {
               className="detail-price-words"
               style={
                 parseInt(quoteDetail.d) > 0
-                  ? { color: "green" }
-                  : { color: "red" }
+                  ? { color: "#adff02" }
+                  : { color: "#FF506A" }
               }
             >
               {parseInt(quoteDetail.d) > 0 ? "⬆︎" : "⬇︎"}

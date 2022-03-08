@@ -1,5 +1,5 @@
 
-<img display="center" src="src/Logo for Readme.png"></img>
+<img display="center" src="/src/Resouces/Logo%20for%20Readme.png"></img>
 
 
 # Project - TriFLe

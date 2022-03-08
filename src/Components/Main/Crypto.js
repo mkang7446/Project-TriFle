@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 function Crypto(props) {
   const [crypto, setCrypto] = useState([]);
-  console.log(crypto);
 
   function getCrypto() {
     fetch(
@@ -36,7 +35,7 @@ function Crypto(props) {
   const renderCrypto = () => {
     return crypto.map((element, idx) => {
       return (
-        <div className="crypto-data">
+        <div key={idx} className="crypto-data">
           <div className="crypto-rank">{element.market_cap_rank}</div>
           <div className="crypto-info">
             <img
@@ -78,7 +77,7 @@ function Crypto(props) {
     <div className="crypto-container">
       <h1 className="crypto-title-word">Top 100 Cryptocurrency Prices</h1>
       <div className="crypto-title">
-        <div className="crypto-rank-title">Rank #</div>
+        <div className="crypto-rank-title">Rank</div>
         <div className="crypto-name-title">Name / Symbol</div>
         <div className="crypto-price-title">Price</div>
         <div className="crypto-marketcap-title">Market Cap</div>

@@ -17,7 +17,7 @@ function Header(props) {
       />
       <div className="nav-right">
         <Link id="nav-right" to="/">
-          <h2 className="home-link">Home</h2>
+          <h2 className="home-link">Stocks</h2>
         </Link>
         <Link id="nav-right" to="/crypto">
           <h2 className="crypto-link">Cryptocurrency</h2>

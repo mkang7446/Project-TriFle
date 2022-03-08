@@ -589,3 +589,65 @@ main {
   margin-bottom: 40px;
   color: #0533b1;
 }
+
+/* ABOUT */
+
+.about-container {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.about-h1 {
+  font-size: 40px;
+}
+
+.img-li {
+  margin-top: 30px;
+  display: flex;
+}
+
+.paragraphs {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.about-ul {
+  font-size: 25px;
+  margin-top: 30px;
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.giphy {
+  margin-right: 80px;
+  width: 350px;
+}
+
+.triangle {
+  margin-right: 5px;
+  color: blue;
+}
+
+.about-logo {
+  margin-top: 20px;
+  margin-left: 450px;
+  width: 480px;
+}
+
+.about-detail {
+  margin-right: 180px;
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 22px;
+}
+.about-detail-two {
+  margin-right: 220px;
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.about-header {
+  display: flex;
+}

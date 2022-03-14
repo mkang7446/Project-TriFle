@@ -4,7 +4,7 @@
 <p>
 
 ### Project Description 
-> My project, TriFle is a real time stock search app that lets a user search stock price, stock market news and all listed companies' information. Also, it provodies top 100 cryptocurrency list. 
+> My project, TriFle is a real time stock search app that lets a user search stock price, stock market news and all listed companies' information. Also, it provides top 100 cryptocurrency list. 
 
 ## URL
 > https://loving-knuth-39ffe9.netlify.app
